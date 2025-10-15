@@ -90,6 +90,7 @@ public class Main {
             System.out.println(p.getArticleNumber() + " - " + p.getTitle() + " (" + p.getDescription() + ") " + p.getPrice() + " Kr");
         }
     }
+
     // ** Metod för att visa produktinfo om artikelnumret finns
     public static void showProductInfo(List<ProductAbstract> products, Scanner input) {
         System.out.println("Ange artikelnummer: ");

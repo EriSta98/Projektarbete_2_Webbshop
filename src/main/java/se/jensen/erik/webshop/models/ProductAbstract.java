@@ -4,7 +4,7 @@ public abstract class ProductAbstract {
 
     //  *** Denna klass är en abstrakt klass som agerar som en mall för alla produkter, KAN EJ SKAPAS BARA ÄRVAS!! *** //
 
-    // Attributes
+    // Fält
     private String articleNumber;
     private String title;
     private String description;
