@@ -18,6 +18,6 @@ public class Electronics extends ProductAbstract{
 
     @Override
     public String category() {
-        return "Clothing";
+        return "Electronics";
     }
 }

@@ -10,9 +10,11 @@ import java.util.Scanner;
 
 public class Main {
 
+    private static List<ProductAbstract> products = new ArrayList<>();
+
     public static void main(String[] args) {
 
-        List<ProductAbstract> products = new ArrayList<>();
+
         Scanner input = new Scanner(System.in);
 
         boolean running = true;
@@ -30,9 +32,9 @@ public class Main {
 
             // -> är en switch syntax, fungerar samma som case + break. Men ser lite renare och snyggare ut.
             switch (choice){
-                case 1 -> addProduct(products, input);
-                case 2 -> listProducts(products);
-                case 3 -> showProductInfo(products, input);
+                case 1 -> addProduct(input);
+                case 2 -> listProducts();
+                case 3 -> showProductInfo(input);
                 case 4 -> running = false;
                 default -> System.out.println("Ogiltigt val!");
             }
@@ -41,7 +43,7 @@ public class Main {
     }
 
     // ** Metod för att lägga till produkter
-    public static void addProduct(List<ProductAbstract> products, Scanner input) {
+    public static void addProduct(Scanner input) {
         System.out.println("Vilken typ av produkt vill du lägga till?");
         System.out.println("1. Bok");
         System.out.println("2. Kläder");
@@ -64,7 +66,7 @@ public class Main {
         int price = input.nextInt();
         input.nextLine(); // Töm Scanner
 
-        // Vi sätter null på objektet då användaren inte har bestämt vilken typ av produkt som ska läggas till
+        // Vi sätter null på objektet då användaren inte har bestämt vilken typ av produkt som ska läggas till?
         ProductAbstract p = null;
 
 
@@ -80,7 +82,7 @@ public class Main {
          }
     }
     // ** Metod för att lista alla produkter
-    public static void listProducts(List<ProductAbstract> products){
+    public static void listProducts(){
         if (products.isEmpty()) {
             System.out.println("Inga produkter tillagda ännu.");
             return;
@@ -92,7 +94,7 @@ public class Main {
     }
 
     // ** Metod för att visa produktinfo om artikelnumret finns
-    public static void showProductInfo(List<ProductAbstract> products, Scanner input) {
+    public static void showProductInfo(Scanner input) {
         System.out.println("Ange artikelnummer: ");
         String search = input.nextLine();
         boolean found = false;
